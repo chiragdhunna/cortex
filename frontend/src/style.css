@@ -1,31 +1,31 @@
 :root {
-  --bg: #f3f4f6;
-  --bg-soft: #eef2ff;
+  --bg: #f4f1eb;
+  --bg-soft: #e5f3ef;
   --surface: #ffffff;
-  --surface-2: #fafbff;
-  --border: #e5e7eb;
-  --border-strong: #d1d5db;
-  --text: #0f172a;
-  --text-muted: #64748b;
-  --text-subtle: #94a3b8;
-  --primary: #6366f1;
-  --primary-hover: #4f46e5;
-  --primary-soft: #eef2ff;
-  --accent-interview: #f97316;
-  --accent-exam: #10b981;
-  --accent-understanding: #8b5cf6;
-  --success: #10b981;
-  --warning: #f59e0b;
-  --danger: #ef4444;
-  --info: #3b82f6;
-  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.04);
-  --shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.06);
-  --shadow-lg: 0 10px 25px rgba(15, 23, 42, 0.08), 0 4px 10px rgba(15, 23, 42, 0.04);
+  --surface-2: #fbfaf7;
+  --border: #e3dfd6;
+  --border-strong: #c9c3b8;
+  --text: #172b2a;
+  --text-muted: #687876;
+  --text-subtle: #99a7a2;
+  --primary: #087f76;
+  --primary-hover: #05645e;
+  --primary-soft: #e5f3ef;
+  --accent-interview: #d95f3f;
+  --accent-exam: #16866f;
+  --accent-understanding: #3d718a;
+  --success: #16866f;
+  --warning: #c8891f;
+  --danger: #c94b47;
+  --info: #3d718a;
+  --shadow-sm: 0 1px 2px rgba(23, 43, 42, 0.04);
+  --shadow: 0 8px 22px rgba(23, 43, 42, 0.07);
+  --shadow-lg: 0 16px 36px rgba(23, 43, 42, 0.12);
   --radius-sm: 6px;
   --radius: 10px;
   --radius-lg: 16px;
-  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
-  --gradient-soft: linear-gradient(180deg, #eef2ff 0%, #ffffff 60%);
+  --gradient-primary: linear-gradient(135deg, #087f76 0%, #1a9a86 100%);
+  --gradient-soft: linear-gradient(135deg, #e5f3ef 0%, #fffdf8 75%);
 }
 
 * {
@@ -42,20 +42,12 @@ body,
 
 body {
   font-family:
-    "Inter",
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial,
-    sans-serif;
+    "Avenir Next", "Trebuchet MS", sans-serif;
   background: var(--bg);
   background-image:
-    radial-gradient(circle at 10% 0%, rgba(99, 102, 241, 0.08), transparent 40%),
-    radial-gradient(circle at 90% 0%, rgba(139, 92, 246, 0.06), transparent 40%),
-    radial-gradient(circle at 50% 100%, rgba(236, 72, 153, 0.04), transparent 50%);
+    linear-gradient(rgba(8, 127, 118, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(8, 127, 118, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
   color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
