@@ -1,0 +1,38 @@
+services:
+  api:
+    build:
+      context: .
+      network: host
+    command: uvicorn api.main:app --host 0.0.0.0 --port 8000
+    network_mode: host
+    env_file: .env
+    volumes: [".:/app", "cortex_storage:/app/storage"]
+    depends_on: [redis]
+    environment:
+      REDIS_URL: redis://127.0.0.1:6379/0
+      OLLAMA_BASE_URL: http://127.0.0.1:11434
+  worker:
+    build:
+      context: .
+      network: host
+    command: celery -A jobs.celery_app worker --loglevel=INFO
+    env_file: .env
+    volumes: [".:/app", "cortex_storage:/app/storage"]
+    network_mode: host
+    depends_on: [redis]
+    environment:
+      REDIS_URL: redis://127.0.0.1:6379/0
+      OLLAMA_BASE_URL: http://127.0.0.1:11434
+  frontend:
+    build:
+      context: ./frontend
+      network: host
+    network_mode: host
+    environment:
+      VITE_API_URL: http://localhost:8000
+    depends_on: [api]
+  redis:
+    image: redis:7-alpine
+    network_mode: host
+volumes:
+  cortex_storage:
