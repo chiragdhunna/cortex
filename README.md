@@ -1,4 +1,4 @@
-# 🧠 Cortex — Multimodal, Category-Aware Notes Generation
+# Cortex: Multimodal, Category-Aware Notes Generation
 
 > Turn **any** learning material — PDFs, audio, video, YouTube links, podcast URLs — into structured, purpose-fit study notes with **one pipeline, zero re-processing**.
 
@@ -10,7 +10,7 @@ Cortex decouples three independent axes — **source ingestion**, **note categor
 
 ---
 
-## ✨ Features at a Glance
+## Features at a Glance
 
 | Capability | Details |
 |---|---|
@@ -29,23 +29,25 @@ Cortex decouples three independent axes — **source ingestion**, **note categor
 
 ---
 
-## 🖼️ UI Tour
+## UI Tour
+
+The dashboard is a working React/Vite client for the FastAPI service. It keeps the three pipeline stages visible so the user can tell whether a job is extracting, generating, or rendering. The screenshots below are captured from the local application.
 
 ### 1. Dashboard — Submit a New Job
 
-![New Job Dashboard](https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Modern%20web%20app%20dashboard%20screenshot%2C%20app%20name%20%22Cortex%22%20with%20brain%20logo.%20Header%20shows%20%22API%20Online%22%20green%20status%20badge%20and%20stat%20cards%20for%20Total%2FActive%2FDone.%20Three%20tabs%3A%20%22New%20Job%22%20active%2C%20%22Job%20History%22%2C%20%22Select%20a%20Job%22.%20Main%20panel%20is%20%22Submit%20a%20New%20Job%22%20form%3A%20left%20side%20dashed-border%20file%20dropzone%20saying%20%22Drop%20a%20file%20here%22%20listing%20PDF%20MP3%20WAV%20M4A%20MP4%20MOV%2C%20right%20side%20URL%20input%20with%20YouTube%20placeholder%20and%20video%2Faudio%20link%20select.%20Below%20that%20three%20category%20cards%3A%20orange%20Interview%20Prep%20with%20target%20icon%2C%20green%20Exam%20Prep%20with%20book%20icon%2C%20purple%20Deep%20Understanding%20with%20brain%20icon%20each%20showing%20description.%20Bottom%20four%20format%20checkbox%20cards%20Markdown%20PDF%20Anki%20CSV%20JSON.%20Primary%20gradient%20button%20%22Generate%20Notes%22.%20Clean%20indigo%2Fviolet%2Fpink%20gradient%20accent%20colors%2C%20soft%20shadows%2C%20rounded%20cards%2C%20professional%20UI%2C%20browser%20viewport%20screenshot&image_size=landscape_16_9)
+![New Job Dashboard](docs/screenshots/new-job.png)
 
 Submit any source via drag-and-drop file upload **or** a pasted link. Pick one note category and any combination of output formats — everything else is handled in the background.
 
 ### 2. Job History — Track Progress Live
 
-![Job History with Progress](https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Web%20app%20dashboard%20screenshot%20for%20Cortex%20app.%20%22Job%20History%22%20tab%20is%20active.%20Responsive%20grid%20of%20multiple%20job%20cards%20each%20showing%20a%20category%20chip%20(green%20Exam%20Prep%2C%20orange%20Interview%2C%20purple%20Understanding)%2C%20a%20colored%20status%20badge%20(Complete%20green%2C%20Generating%20Notes%20purple%2C%20Transcribing%20amber).%20Every%20card%20has%20a%205-step%20visual%20progress%20bar%20with%20steps%20Queue%20Ingest%20Generate%20Format%20Done%20and%20a%20gradient%20fill.%20Each%20card%20shows%20format%20tags%20Markdown%20PDF%20Anki%20JSON%2C%20and%20a%20monospace%20Job%20ID.%20Header%20stats%20show%20counts.%20Clean%20indigo%20gradient%20aesthetic%2C%20white%20cards%20on%20light%20grey%20background%2C%20soft%20shadows%2C%20rounded%20corners%2C%20browser%20screenshot%20style&image_size=landscape_16_9)
+![Job History with Progress](docs/screenshots/job-history.png)
 
 Every job is polled every 2.5s. Each card shows the live stage, progress bar across 5 pipeline steps, selected category, and requested formats. Jobs with errors show a red banner with the human-readable reason.
 
 ### 3. Job Details — Notes Viewer & Downloads
 
-![Notes Viewer and Downloads](https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Web%20app%20screenshot%20Cortex%20Job%20Details%20page.%20Top%20section%20Job%20Details%20card%3A%20green%20Complete%20status%20badge%2C%20Exam%20Prep%20category%20chip%2C%20progress%20bar%20full.%20Below%20Downloads%20grid%20with%20four%20cards%3A%20Markdown%20notepad%20icon%2C%20PDF%20file%20icon%2C%20Anki%20CSV%20flashcards%20icon%2C%20JSON%20icon%20each%20with%20Download%20arrow%20text.%20Below%20Regenerate%20Notes%20panel%20with%20category%20dropdown%20and%20Render%20Additional%20Formats%20multi-checkbox.%20Main%20notes%20viewer%20below%20titled%20%22Intro%20to%20Machine%20Learning%22%3A%20topic%20cards%20with%20gradient%20numbered%20badges%2C%20Summary%20paragraph%2C%20Definitions%20grid%20cards%20(Term%3A%20Definition)%2C%20Self-Test%20questions%20expandable%20disclosure%20widgets%20with%20answers.%20Purple%2Findigo%20gradient%20theme%2C%20clean%20typography%2C%20full%20page%20scrollable%20browser%20screenshot&image_size=landscape_16_9)
+![Notes Viewer and Downloads](docs/screenshots/job-details.png)
 
 Click any completed job to see the inline Notes viewer, one-click downloads for every format, plus the **regenerate** and **additional-format** actions that skip re-ingestion and re-generation respectively.
 
