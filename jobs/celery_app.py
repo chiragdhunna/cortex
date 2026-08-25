@@ -1,0 +1,6 @@
+"""Celery application shared by asynchronous pipeline tasks."""
+from celery import Celery
+from core.config import settings
+
+celery_app = Celery("cortex", broker=settings.redis_url, backend=settings.redis_url)
+celery_app.conf.task_track_started = True
